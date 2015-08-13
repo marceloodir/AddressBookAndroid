@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AgendaContatos</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="agenda">Agenda de Contatos</string>
+    <string name="ncontato">Novo Contato</string>
+    <string name="title_activity_novo_contato">NovoContato</string>
+    <string name="inserir">Inserir</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="title_activity_sobre">Sobre</string>
+    <string name="fechar">Fechar</string>
+</resources>
