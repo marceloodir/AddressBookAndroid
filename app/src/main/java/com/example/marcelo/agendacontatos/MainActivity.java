@@ -2,10 +2,15 @@ package com.example.marcelo.agendacontatos;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -17,14 +22,14 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final GridView grid = (GridView) findViewById(R.id.gridView);
+        final GridView grid = (GridView) findViewById(R.id.gridview);
 
-        ArrayList<String> lista = new ArrayList<String>();
-        lista.add("valor um");
-        lista.add("valor dois");
-        lista.add("valor 3");
+        ArrayList<Contato> contatos = new ArrayList<Contato>();
+        contatos.add(new Contato("Marcelo Odir",5555));
+        contatos.add(new Contato("Millena Freire", 444));
+        contatos.add(new Contato("Odir Macedo", 333));
 
-        ArrayAdapter adapter = new ArrayAdapter(this,R.id.lista, lista);
+        ContatosAdapter adapter = new ContatosAdapter(this,0,contatos);
         grid.setAdapter(adapter);
     }
 
@@ -56,5 +61,11 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void chamarClick(View v) {
+
+        TextView tv = (TextView) v;
+        Log.v("valor",tv.getText().toString());
     }
 }
